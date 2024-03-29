@@ -2,6 +2,28 @@ const express = require('express');
 const path = require('path'); // Import the 'path' module
 const app = express();
 
+// Define route for /users
+app.get('/users', (req, res) => {
+    res.send('Users route');
+});
+
+// Define route for /comments
+app.get('/comments', (req, res) => {
+    res.send('Comments route');
+});
+
+// Define route for /posts
+app.get('/posts', (req, res) => {
+    res.send('Posts route');
+});
+
+// Define route with parameter capturing all subsequent paths
+app.get('/:category', (req, res) => {
+    const category = req.params.category;
+    res.send(`${category} route`);
+});
+
+
 // Custom Middleware - Logger Middleware
 const loggerMiddleware = (req, res, next) => {
     console.log(`[${new Date().toISOString()}] ${req.method} ${req.url}`);
