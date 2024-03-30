@@ -17,6 +17,9 @@ const logReq = function (req, res, next) {
     next();
 };
 
+app.use(express.urlencoded({ extended: true })); 
+
+
 app.use(logReq);
 
 // Use our Routes
@@ -28,9 +31,20 @@ app.use("/api/comments", commentsRoutes)
 app.set("view engine", "ejs");
 app.use(express.static(path.join(__dirname, "styles")));
 
+//////////////GET ROUTE TO RENDER THE FORM 
 app.get("/", (req, res) => {
     res.render("index");
 });
+
+// POST ROUTE TO HANDLE THE FORM SUBMISSION
+
+app.post("/submit", (req, res) => {
+    const { name, username, email } = req.body;
+    // Do something with the form data, e.g., save it to a database
+    console.log("Received form data:", { name, username, email });
+    res.send("Form submitted successfully!");
+});
+
 
 // Custom 404 (not found) middleware.
 app.use((req, res) => {
