@@ -112,12 +112,7 @@ router.patch('/:id', (req, res) => {
     }
 });
 
-// DELETE a comment
-router.delete('/:id', (req, res) => {
-    const commentId = parseInt(req.params.id);
-    commentData = commentData.filter(comment => comment.id !== commentId);
-    res.sendStatus(204);
-});
+
 */
 
 module.exports = router;
