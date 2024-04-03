@@ -29,3 +29,28 @@ routes/: Contains route handlers -commentsR........, postR....., usersR......
 views/: Contains EJS templates for rendering views-index.ejs
 styles.css: CSS file for styling the application
 
+## Routes
+
+### Users
+
+- **GET /api/users**: Get all users.
+- **GET /api/users/:id**: Get user by ID.
+- **POST /api/users**: Create a new user.
+- **PATCH /api/users/:id**: Update user by ID.
+- **DELETE /api/users/:id**: Delete user by ID.
+
+### Posts
+
+- **GET /api/posts**: Get all posts.
+- **GET /api/posts/:id**: Get post by ID.
+- **POST /api/posts**: Create a new post.
+- **PATCH /api/posts/:id**: Update post by ID.
+- **DELETE /api/posts/:id**: Delete post by ID.
+
+### Comments
+
+- **GET /api/comments**: Get all comments.
+- **GET /api/comments/:id**: Get comment by ID.
+- **POST /api/comments**: Create a new comment.
+- **PATCH /api/comments/:id**: Update comment by ID.
+- **DELETE /api/comments/:id**: Delete comment by ID.

@@ -60,12 +60,8 @@ router.delete("/:id", (req, res) => {
 module.exports = router;
 
 //////////////////////////
-//////////removed this post , patch,delete ...from all routes files////////// 
+//////////removed this post , patch,delete ...from all routes files for sometime ////////// 
 /*
-const express = require('express');
-const router = express.Router();
-
-const comments  = require('../data/comments.js');
 
 // GET route to get all comments database
 router.get('/', (req, res) => {
