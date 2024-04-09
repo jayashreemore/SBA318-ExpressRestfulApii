@@ -2,8 +2,8 @@
 
 const express = require("express");
 const app = express();
-const port = 3000;
-require('dotenv').config();
+const port = 3000;  /////can be 3001 as well per Mercy 
+///require('dotenv').config();///////////deleted .env from project
 
 const error = require("./utilities/error");
 
@@ -43,9 +43,12 @@ app.get("/", (req, res) => {
 
 app.post("/submit", (req, res) => {
     const { name, username, email } = req.body;
+    const queryParameter = req.query.parameterName; ///added query parameter
     // Do something with the form data, e.g., save it to a database
     console.log("Received form data:", { name, username, email });
+    console.log("Received query parameter:", queryParameter);/////added4/9/24
     res.send("Form submitted successfully!");
+
 });
 
 //// PATCH route to update user data==============
@@ -54,10 +57,25 @@ app.patch("/api/users/:id", (req, res) => {
     // Update user data based on userId
     res.send(`Updated user with id ${userId}`);
 });
+///==========4/9/24=========
+// Added the new PATCH route here
+app.patch("/api/users", (req, res) => {
+    const userId = req.query.id; // Accessing query parameter 'id'
+    // Update user data based on userId
+    res.send(`Updated user with id ${userId}`);
+});
+
 
 ///// DELETE route to delete user data==============
 app.delete("/api/users/:id", (req, res) => {
     const userId = req.params.id;
+    // Delete user data based on userId
+    res.send(`Deleted user with id ${userId}`);
+});
+/////////=========4/9/24======
+// Added the new DELETE route here
+app.delete("/api/users", (req, res) => {
+    const userId = req.query.id; // Accessing query parameter 'id'
     // Delete user data based on userId
     res.send(`Deleted user with id ${userId}`);
 });
