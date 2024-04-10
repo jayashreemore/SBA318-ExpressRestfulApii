@@ -54,3 +54,36 @@ styles.css: CSS file for styling the application
 - **POST /api/comments**: Create a new comment.
 - **PATCH /api/comments/:id**: Update comment by ID.
 - **DELETE /api/comments/:id**: Delete comment by ID.
+
+
+### Users
+
+- **GET /api/users**: Get all users.
+- **GET /api/users/:id**: Get user by ID.
+- **POST /api/users**: Create a new user.
+- **PATCH /api/users/:id**: Update user by ID.
+- **DELETE /api/users/:id**: Delete user by ID.
+
+Sample data for users
+ {
+      id: 1,
+      name: "John Doe",
+      username: "John23",
+      email: "John23@example.com",
+    
+  },
+
+sample data for comments
+{
+    "id": 1,
+    "userId": 1,
+    "comment": "Great post!"
+  },
+
+sample data for posts
+{
+    id: 1,
+    userId: 1,
+    title: "First Post",
+    content:"content1 of user1",
+  },
